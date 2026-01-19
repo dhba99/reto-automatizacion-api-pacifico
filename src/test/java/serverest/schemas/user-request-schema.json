@@ -1,6 +1,6 @@
 {
-  "nome": "#regex .+",
-  "email": "#regex .+",
-  "password": "#regex .+",
-  "administrador": "#regex .+"
+  "nome": "#string",
+  "email": "#regex [\\w-._]+@[\\w-._]+",
+  "password": "#regex [\\w-._]+",
+  "administrador": "#regex (true|false)"
 }
