@@ -9,7 +9,9 @@ class ExamplesTest {
 
     @Test
     void testParallel() {
-        Results results = Runner.path("classpath:examples")
+        String karateOptions = System.getProperty("karate.options");
+        Results results = Runner.path("classpath:serverest/users")
+                .tags(karateOptions)
                 //.outputCucumberJson(true)
                 .parallel(5);
         assertEquals(0, results.getFailCount(), results.getErrorMessages());
