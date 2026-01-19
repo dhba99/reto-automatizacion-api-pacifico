@@ -1,0 +1,6 @@
+{
+  "nome": "#regex .+",
+  "email": "#regex .+",
+  "password": "#regex .+",
+  "administrador": "#regex .+"
+}
