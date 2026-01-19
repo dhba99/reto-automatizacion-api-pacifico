@@ -1,3 +1,4 @@
+@POST_users_endpoint @regression
 Feature: Agregar usuario por id
 
   Background:
@@ -19,6 +20,7 @@ Feature: Agregar usuario por id
     * def idUserCreated = response._id
     * print "Status 201 retornado correctamente en endpoint POST /usuarios"
 
+  @CP-202
   Scenario Outline: Agregar usuario con algun campo vacio retornando un status code 400
     * def generateUser = call read('classpath:serverest/utils/generate-users.feature@generate_user')
     * def randomUser = generateUser.userRequestJson
@@ -40,6 +42,7 @@ Feature: Agregar usuario por id
       | email         | email         | email não pode ficar em branco    |
       | administrator | administrator | administrator não é permitido     |
 
+  @CP-203
   Scenario: Agregar usuario con email existente retornando un status code 400
     * def generateUser = call read('classpath:serverest/utils/generate-users.feature@generate_user')
     * def randomUser = generateUser.userRequestJson

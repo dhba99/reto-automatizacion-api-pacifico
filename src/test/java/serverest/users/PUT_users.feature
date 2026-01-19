@@ -1,3 +1,4 @@
+@PUT_users_endpoint @regression
 Feature: Actualiza usuario por id
 
   Background:
@@ -19,6 +20,7 @@ Feature: Actualiza usuario por id
     And match response.message == 'Registro alterado com sucesso'
     * print "Status 201 retornado correctamente en endpoint POST /usuarios"
 
+  @CP-302
   Scenario Outline: Agregar usuario con algun campo vacio retornando un status code 400
     * def generateUser = call read('classpath:serverest/utils/generate-users.feature@generate_user')
     * def randomUser = generateUser.userRequestJson
@@ -40,6 +42,7 @@ Feature: Actualiza usuario por id
       | email         | email         | email não pode ficar em branco    |
       | administrator | administrator | administrator não é permitido     |
 
+  @CP-303
   Scenario: Agregar usuario con email existente retornando un status code 400
     * def generateUser = call read('classpath:serverest/utils/generate-users.feature@generate_user')
     * def randomUser = generateUser.userRequestJson

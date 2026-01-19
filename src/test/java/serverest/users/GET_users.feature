@@ -1,3 +1,4 @@
+@GET_users_endpoint @regression
 Feature: Obtener lista de usuarios
 
   Background:
@@ -13,13 +14,15 @@ Feature: Obtener lista de usuarios
     * def emailFirstUser = response.usuarios[0].email;
     * print "Status 200 retornado correctamente en endpoint GET /usuarios"
 
+  @CP-002
   Scenario: Valida que la cantidad de usuarios retornados es la misma que el campo quentidade
     Given path 'usuarios'
     When method GET
     Then status 200
-    And response.quantidade == response.usuarios.length
+    And match response.quantidade == response.usuarios.length
     * print "Total de usuarios retornados es el mismo en el campo quentidade en GET /usuarios"
 
+  @CP-003
   Scenario: Valida la estructura de respuesta JSON del usuario
     Given path 'usuarios'
     When method GET

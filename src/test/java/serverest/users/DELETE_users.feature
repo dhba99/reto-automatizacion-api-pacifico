@@ -1,3 +1,4 @@
+@DELETE_users_endpoint @regression
 Feature: Eliminar usuario por id
 
   Background:
@@ -5,6 +6,7 @@ Feature: Eliminar usuario por id
     * def userJson = read('classpath:serverest/schemas/user-response-schema.json')
 
 
+  @CP-101
   Scenario: Eliminar usuario por id con un status code 200
     * def createdUser = call read('POST_users.feature@CP-201')
     * def idUserCreated = createdUser.idUserCreated
@@ -14,6 +16,7 @@ Feature: Eliminar usuario por id
     And match response.message == "Registro excluído com sucesso"
     * print "Status 200 retornado correctamente en endpoint DELETE /usuarios/{id}"
 
+  @CP-102
   Scenario Outline: Valida que al eliminar por un ID no existente retorne status code 200
     Given path 'usuarios/' + non_id
     When method DELETE
