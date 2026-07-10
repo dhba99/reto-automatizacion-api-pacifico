@@ -25,8 +25,8 @@ Automatización de pruebas funcionales y de integración para APIs / aplicacione
 Clonar repositorio:
 
 ```bash
-git clone https://github.com/dhba99/reto-automatizacion-api-pacifico.git
-cd reto-automatizacion-api-pacifico
+git clone https://github.com/dhba99/api-automation-karatedsl.git
+cd api-automation-karatedsl
 ```
 
 Instalar dependencias:
